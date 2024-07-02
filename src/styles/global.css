@@ -1,0 +1,8 @@
+html.dark {
+  background-color: #13151a;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
