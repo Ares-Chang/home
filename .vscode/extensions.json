@@ -1,4 +1,10 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "antfu.iconify",
+    "antfu.unocss",
+    "antfu.goto-alias",
+    "astro-build.astro-vscode",
+    "dbaeumer.vscode-eslint",
+  ],
   "unwantedRecommendations": []
 }
