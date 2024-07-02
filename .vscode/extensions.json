@@ -4,7 +4,7 @@
     "antfu.unocss",
     "antfu.goto-alias",
     "astro-build.astro-vscode",
-    "dbaeumer.vscode-eslint",
+    "dbaeumer.vscode-eslint"
   ],
   "unwantedRecommendations": []
 }
