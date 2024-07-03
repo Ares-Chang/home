@@ -18,6 +18,7 @@
     "@unocss/eslint-plugin": "^0.61.0",
     "eslint": "9.5.0",
     "eslint-plugin-astro": "^1.2.2",
+    "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.2",
