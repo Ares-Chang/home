@@ -7,9 +7,25 @@ interface Props {
 const { filter = true, ...arg } = Astro.props
 ---
 
-<div w-full h-full z--1 class:list={[arg]}>
-  <div relative w-full h-full bg="[url(/images/bg.jpg)] center cover">
+<div class="group" w-full h-full class:list={[arg]}>
+  <div w-full h-full relative>
+    <img
+      absolute
+      top-0
+      left-0
+      w-full
+      h-full
+      object-cover
+      transition-1000
+      group-hover:scale-110
+      z--1
+      src="/images/bg.jpg"
+    />
+
     <div
+      absolute
+      top-0
+      left-0
       w-full
       h-full
       class={filter
@@ -20,8 +36,6 @@ const { filter = true, ...arg } = Astro.props
     >
     </div>
 
-    <div w-full h-full absolute top-0 left-0>
-      <slot />
-    </div>
+    <slot />
   </div>
 </div>

@@ -4,7 +4,7 @@ import BackgroundBox from '~/components/BackgroundBox.astro'
 import Card from '~/components/Card.astro'
 ---
 
-<Layout title="Welcome to My Homepage.">
+<Layout title="Welcome to My Homepage." overflow-hidden>
   <BackgroundBox absolute />
 
   <main
@@ -20,7 +20,7 @@ import Card from '~/components/Card.astro'
     <h1>Hello, Ares Chang!</h1>
 
     <div w-full h-120 grid="~ cols-3" gap-2>
-      <Card col-span-2 p0>
+      <Card col-span-2 row-span-2 p0>
         <BackgroundBox>
           <div h-full center>Hello, World!</div>
         </BackgroundBox>
@@ -28,8 +28,9 @@ import Card from '~/components/Card.astro'
 
       <Card center>Hello, World!</Card>
       <Card row-span-2 center>Hello, World!</Card>
-      <Card row-span-3 center>Hello, World!</Card>
+      <Card row-span-2 center>Hello, World!</Card>
       <Card center>Hello, World!</Card>
+      <Card row-span-2 center>Hello, World!</Card>
       <Card row-span-2 center>Hello, World!</Card>
       <Card center>Hello, World!</Card>
     </div>
