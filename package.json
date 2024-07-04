@@ -17,6 +17,7 @@
     "@astrojs/check": "^0.7.0",
     "@unocss/astro": "^0.61.0",
     "@unocss/eslint-plugin": "^0.61.0",
+    "@unocss/reset": "^0.61.0",
     "eslint": "9.5.0",
     "eslint-plugin-astro": "^1.2.2",
     "eslint-plugin-format": "^0.1.2",
