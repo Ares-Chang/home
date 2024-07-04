@@ -11,6 +11,9 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(typescript@5.5.2)
+      dayjs:
+        specifier: ^1.11.11
+        version: 1.11.11
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.21.2
@@ -1324,6 +1327,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -4728,6 +4734,8 @@ snapshots:
       source-map-js: 1.2.0
 
   cssesc@3.0.0: {}
+
+  dayjs@1.11.11: {}
 
   debug@3.2.7:
     dependencies:

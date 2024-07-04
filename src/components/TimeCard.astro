@@ -1,0 +1,24 @@
+---
+import dayjs from 'dayjs'
+import Card from '~/components/Card.astro'
+
+const date = dayjs().format('YYYY 年 MM 月 DD 日')
+const time = dayjs().format('HH:mm:ss')
+---
+
+<Card flex="~ col" justify-center items-center gap-2 text-center>
+  <div id="date" text-lg>{date}</div>
+  <div id="time" font-mono text-2xl>{time}</div>
+</Card>
+
+<script>
+  import dayjs from 'dayjs'
+
+  const date = document.querySelector('#date')
+  const time = document.querySelector('#time')
+
+  setInterval(() => {
+    date && (date.textContent = dayjs().format('YYYY 年 MM 月 DD 日'))
+    time && (time.textContent = dayjs().format('HH:mm:ss'))
+  }, 1000)
+</script>
