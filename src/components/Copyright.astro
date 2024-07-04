@@ -1,0 +1,24 @@
+---
+import Card from './Card.astro'
+---
+
+<Card flex="~ col" justify-center items-center gap-2 text-sm font-mono>
+  <p>
+    Powered by
+    <a href="https://astro.build" target="_blank">Astro</a>
+  </p>
+  <p>Released under the <a href="https://github.com/Ares-Chang/home/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  <p>
+    Copyright © 2024 - PRESENT
+    <a href="https://github.com/Ares-Chang" target="_blank">Ares Chang</a>
+  </p>
+</Card>
+
+<style>
+  a {
+    --uno: text-teal hover:text-teal-600 underline;
+  }
+  p {
+    --uno: m0;
+  }
+</style>

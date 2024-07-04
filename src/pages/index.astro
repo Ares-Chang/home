@@ -2,7 +2,9 @@
 import Layout from '~/layouts/Layout.astro'
 import BackgroundBox from '~/components/BackgroundBox.astro'
 import Card from '~/components/Card.astro'
+
 import TimeCard from '~/components/TimeCard.astro'
+import Copyright from '~/components/Copyright.astro'
 ---
 
 <Layout title="Welcome to My Homepage." overflow-hidden>
@@ -36,7 +38,7 @@ import TimeCard from '~/components/TimeCard.astro'
       <Card center>Hello, World!</Card>
       <Card row-span-2 center>Hello, World!</Card>
       <Card row-span-2 center>Hello, World!</Card>
-      <Card center>Hello, World!</Card>
+      <Copyright />
     </div>
   </main>
 </Layout>
