@@ -6,10 +6,12 @@ const date = dayjs().format('YYYY 年 MM 月 DD 日')
 const time = dayjs().format('HH:mm:ss')
 ---
 
-<Card flex="~ col" justify-center items-center gap-2 text-center>
-  <div id="date" text-lg>{date}</div>
-  <div id="time" font-mono text-2xl>{time}</div>
-</Card>
+<div w-full h-full class:list={[Astro.props]}>
+  <Card w-full flex="~ col" justify-center items-center gap-2 text-center>
+    <div id="date" text-lg>{date}</div>
+    <div id="time" font-mono text-2xl>{time}</div>
+  </Card>
+</div>
 
 <script>
   import dayjs from 'dayjs'
