@@ -1,0 +1,57 @@
+---
+import Card from '~/components/Card.astro'
+import { useAWord } from '~/composables/aword'
+
+const { hitokoto, from, error, msg } = await useAWord()
+---
+
+<div w-full h-full class:list={[Astro.props]}>
+  <Card
+    id="card"
+    w-full
+    flex="~ col"
+    justify-center
+    items-center
+    gap-2
+    text-center
+  >
+    <span id="text">{hitokoto}</span>
+    <span
+      id="author"
+      font-bold
+      class:list={[{ hidden: !from }]}
+    >-「 <span>{from}</span> 」</span
+    >
+    <span id="msg" font-bold class:list={[{ hidden: !error }]}>「 {msg} 」</span
+    >
+  </Card>
+</div>
+
+<script>
+import { useAWord } from '~/composables/aword'
+
+const card = document.querySelector('#card')
+card && card.addEventListener('click', refresh)
+
+async function refresh() {
+  const { hitokoto, from, error = false, msg } = await useAWord()
+  const text = document.querySelector('#text')
+  const author = document.querySelector('#author')
+  const message = document.querySelector('#msg')
+
+  text && (text.textContent = hitokoto)
+
+  if (author) {
+    author.classList.toggle('hidden', !from)
+    const text = author.querySelector('span')
+    if (!text)
+      return
+    text.textContent = from
+  }
+
+  if (message) {
+    message.classList.toggle('hidden', !error)
+    message.textContent = msg
+  }
+}
+</script>
