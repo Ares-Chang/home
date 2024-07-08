@@ -1,10 +1,11 @@
 ---
 interface Props {
+  link?: string
   class?: string
   [key: string]: any
 }
 
-const { class: className, ...arg } = Astro.props
+const { link, class: className, ...arg } = Astro.props
 ---
 
 <div
@@ -20,7 +21,9 @@ const { class: className, ...arg } = Astro.props
   transition-600
   hover="scale-102 z-1"
   {...arg}
-  class:list={[className, arg]}
+  class:list={[className, arg, { 'cursor-pointer': link }, 'has-[#card-link]:p-0!']}
 >
-  <slot />
+  {
+    link ? <a id="card-link" w-full h-full p-2 center href={link} target="_blank"><slot /></a> : <slot />
+  }
 </div>
