@@ -1,0 +1,15 @@
+---
+import Card from '~/components/Card.astro'
+import DarkToggle from '~/components/Dark/Toggle.astro'
+---
+
+<Card id="btn" center cursor-pointer>
+  <DarkToggle id="themeToggle" />
+</Card>
+
+<script is:inline>
+  const btn = document.getElementById('btn')
+  const themeToggle = document.getElementById('themeToggle')
+  btn.addEventListener('click', () => themeToggle.click())
+  themeToggle.addEventListener('click', e => e.stopPropagation()) // 阻止事件多次触发
+</script>

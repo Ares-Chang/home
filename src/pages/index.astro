@@ -6,6 +6,7 @@ import Card from '~/components/Card.astro'
 import TimeCard from '~/components/TimeCard.astro'
 import Copyright from '~/components/Copyright.astro'
 import AWord from '~/components/AWord.astro'
+import DarkCard from '~/components/Dark/CardBtn.astro'
 ---
 
 <Layout title="Welcome to My Homepage." overflow-hidden>
@@ -22,12 +23,12 @@ import AWord from '~/components/AWord.astro'
     overflow-hidden
   >
     <div flex="~ col" justify-center items-center gap-1 mb-4 z-1>
-      <h1 text-3xl>Hello, Ares Chang!</h1>
+      <h1 text-3xl color-white>Hello, Ares Chang!</h1>
       <h3 text-xl color="gray-50/80">Happy every day ~</h3>
     </div>
 
-    <div w-full h-120 grid="~ cols-4" gap-3>
-      <Card col-span-2 row-span-2 p0>
+    <div w-full h-120 p-2 grid="~ cols-4" gap-3>
+      <Card col-span-2 row-span-2 p0 border-0>
         <BackgroundBox>
           <div h-full center>Hello, World!</div>
         </BackgroundBox>
@@ -38,7 +39,7 @@ import AWord from '~/components/AWord.astro'
       <AWord row-span-2 />
       <Card center>Hello, World!</Card>
       <Card row-span-2 center>Hello, World!</Card>
-      <Card center>Hello, World!</Card>
+      <DarkCard />
       <Copyright />
     </div>
   </main>
