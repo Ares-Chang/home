@@ -20,10 +20,21 @@ const { hitokoto, from, error, msg } = await useAWord()
       id="author"
       font-bold
       class:list={[{ hidden: !from }]}
-    >-「 <span>{from}</span> 」</span
-    >
-    <span id="msg" font-bold class:list={[{ hidden: !error }]}>「 {msg} 」</span
-    >
+    >-「 <span>{from}</span> 」</span>
+
+    <span id="msg" font-bold class:list={[{ hidden: !error }]}>「 {msg} 」</span>
+
+    <div slot="back">
+      Data provided by
+      <a
+        href="https://hitokoto.cn/"
+        target="_blank"
+        text-teal
+        hover:text-teal-600
+        underline
+      >hitokoto.cn</a
+      >
+    </div>
   </Card>
 </div>
 

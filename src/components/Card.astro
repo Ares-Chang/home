@@ -6,9 +6,12 @@ interface Props {
 }
 
 const { link, class: className, ...arg } = Astro.props
+
+const hasBack = Astro.slots.has('back')
 ---
 
 <div
+  relative
   w-full
   h-full
   bg="gray-50/20 dark:black/40"
@@ -21,9 +24,59 @@ const { link, class: className, ...arg } = Astro.props
   transition-600
   hover="scale-102 z-1"
   {...arg}
-  class:list={[className, arg, { 'cursor-pointer': link }, 'has-[#card-link]:p-0!']}
+  class:list={[
+    className,
+    arg,
+    { 'cursor-pointer': link },
+    'has-[#card-link]:p-0!',
+  ]}
 >
   {
-    link ? <a id="card-link" w-full h-full p-2 center href={link} target="_blank"><slot /></a> : <slot />
+    link && (
+      <a
+        id="card-link"
+        absolute
+        w-full
+        h-full
+        center
+        href={link}
+        target="_blank"
+      />
+    )
+  }
+
+  { hasBack ? <div id="front" h-full center flex-col><slot /></div> : <slot /> }
+
+  {
+    hasBack && (
+      <>
+        <div
+          id="turn"
+          absolute
+          right--5
+          bottom--5
+          rotate-45
+          w-9
+          h-9
+          bg="purple/50 dark:purple/40 hover:purple/80"
+          cursor-pointer
+          z-1
+        />
+        <div id="back" w-full h-full absolute top-0 left-0 center class="hidden">
+          <slot name="back" />
+        </div>
+      </>
+    )
   }
 </div>
+
+<script>
+  const turn = document.querySelector('#turn')
+  const front = document.querySelector('#front')
+  const back = document.querySelector('#back')
+
+  turn && turn.addEventListener('click', () => {
+    front && front.classList.toggle('hidden')
+    back && back.classList.toggle('hidden')
+  })
+</script>
